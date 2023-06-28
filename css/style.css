@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Staatliches&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  /* Colors */
+  --bg-primary: #eff1ff;
+  --bg-header: #8e9aaf;
+  --bg-heading: #cbc0d3;
+  --bg-btn: #feeafa;
+  --heading-txt: #4a4e69;
+  --paragraph-txt: #23053a;
+  --white: #ffffff;
+
+  /* Fonts */
+  --font-heading: 'Staatliches', cursive;
+  --font-paragraph: 'Palanquin', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: var(--font-heading);
+}
+
+header::before {
+  content: '';
+  top: 0;
+  left: 0;
+  display: block;
+  position: absolute;
+  background: var(--bg-header);
+  height: 17.4375rem;
+  width: 100%;
+  z-index: -100;
+}
+
+.heading {
+  max-width: 24rem;
+  margin: auto;
+  text-align: center;
+}
+
+.heading img {
+  margin: 2rem auto;
+  width: 8.5625rem;
+  height: 8.5625rem;
+}
+
+.heading h1 {
+  background-color: var(--bg-heading);
+  width: 100%;
+  color: var(--white);
+  text-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  font-size: 2.5rem;
+  line-height: 2.125rem;
+  letter-spacing: 0.125rem;
+  padding: 0.5rem;
+  margin-bottom: 1.81rem;
+}
+
+header p {
+  color: var(--paragraph-txt);
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: var(--font-paragraph);
+  line-height: 0.9375rem;
+  max-width: 19rem;
+  padding-top: 0.87rem;
+  margin: auto;
+}
+
+main {
+  max-width: 25rem;
+  margin: 3.94rem auto 3.75rem;
+  padding: 0 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  animation: downToTop 900ms ease-in-out 350ms forwards;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--bg-btn);
+  width: 7rem;
+  height: 2.1875rem;
+  cursor: pointer;
+  color: var(--heading-txt);
+  font-size: 1rem;
+  line-height: 2.125rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  padding: 1px 2px;
+  animation: topToDown 1s ease-in-out 400ms forwards;
+}
+
+@keyframes downToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topToDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
